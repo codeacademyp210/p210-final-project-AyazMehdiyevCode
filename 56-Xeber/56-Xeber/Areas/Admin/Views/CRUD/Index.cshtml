@@ -1,0 +1,57 @@
+﻿@model System.Collections.Generic.List<_56_Xeber.Areas.Admin.Models.News>
+@using System.Globalization
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<section class="bg-light w-100 vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 p-1">
+                        <a class="btn btn-dark d-block" href="@Url.Action("Create")">Yeni</a>
+                    </div>
+                </div>
+                <div class="row flex-wrap overflow-hidden">
+
+                    @{foreach (var item in Model)
+                        {
+                            string date;
+                            if (item.PubDate.Day == DateTime.Now.Day)
+                            {
+                                date = item.PubDate.ToString("Bu Gün: HH:mm");
+                            }
+                            else
+                            {
+                                date = item.PubDate.ToString("dddd, dd MMMM yyyy HH:mm", new CultureInfo("Az"));
+                            }
+
+                       
+
+                            <div class=" text-light bg-light col-11 col-sm-5 col-md-4 col-lg-2">
+                                <div class="row p-1">
+                                    <div class="col-12 bg-dark p-2">
+                                        <p class="overflow-hidden" style="min-height:70px;">@item.Title_az</p>
+                                        <span>@(date)</span>
+                                        <div class="col-12 w-100 p-0">
+                                            <img class="w-100" src="~/Public/Uploads/@(item.Images.FirstOrDefault().Url)" alt="Alternate Text" />
+                                        </div>
+                                        <a href="@Url.Action("Read",new { item.Id })" class=" m-1 btn btn-light">Oxu</a>
+                                        <a href="@Url.Action("Update",new { item.Id })" class="  m-1 btn btn-success">Düzəliş et</a>
+                                        <a href="@Url.Action("Delete",new { item.Id })" class="  m-1 btn btn-danger">Sil</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,185 @@
+﻿
+@using System.Globalization
+@using _56_Xeber.Class
+@using _56_Xeber.Resources
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    <header>
+        <section id="d-width-min-320">
+            <p>Xahiş edirik ekranın eni 320px və yuxarı cihazlardan istifadə edin.</p>
+        </section>
+        <section id="topSection">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-sm-6 col-lg">
+                            <ul>
+                                <li class="d-flex align-items-center justify-content-start">
+                                    <img src="~/Public/img/Icons/small-calendar.png" alt="whatsapp-logo">
+                                    <span class="text-nowrap">@DateTime.Now.ToString("dd MMMM yyyy dddd")</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg">
+                            <ul>
+                                <li class="d-flex align-items-center justify-content-sm-end">
+                                    <img src="~/Public/img/Icons/manat.png" alt="whatsapp-logo">
+                                    <span id="usd">1.00</span>
+                                    <span>&nbspUSD</span>
+                                    <span>&nbsp|&nbsp</span>
+                                    <span id="euro">1.00</span>
+                                    <span>&nbspEURO</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg">
+                            <ul>
+                                <li class="d-flex align-items-center justify-content-start">
+                                    <img src="~/Public/img/Icons/cloud.png" alt="whatsapp-logo">
+                                    <span>@Resource.Baku:&nbsp</span>
+                                    <span id="Temp">23</span>
+                                    <span>&nbsp&#8451</span>
+                                    <span> &nbsp|&nbsp</span>
+                                    <span id="Wind">2.35</span>
+                                    <span id="Wind">&nbspkm/s</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg">
+                            <ul>
+                                <li class="d-flex align-items-center justify-content-sm-end">
+                                    <img src="~/Public/img/Icons/whatsapp-logo.png" alt="whatsapp-logo">
+                                    <a href="Tel:">(+994)40-600-50-40</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mainSection" style="background-image: url('/Public/img/1.jpg')">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-5">
+                            <a href="#"><img src="~/Public/img/56-logo-@(Resource.langg+".png")" alt="56 Xəbər"></a>
+                        </div>
+                        <div class="d-none col-lg-2 justify-content-center d-lg-flex">
+                            <a href="https://az.wikipedia.org/wiki/Az%C9%99rbaycan" target="_Blank"><img src="~/Public/img/azerbaijan-2.png" alt=""></a>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-5 d-flex align-items-center ">
+                            <div class="container-fluid px-0">
+                                <div class="row">
+                                    <div class="col-12 justify-content-end d-sm-flex d-block">
+                                        <a class="ml-2" href="@Url.Action("ChangeLang",new { lang = LanguageM.AvailableLanguages[1].LanguageCultureName })"><img src="~/Public/img/Icons/azerbaijan.png" alt="Az"></a>
+                                        <a class="ml-2" href="@Url.Action("ChangeLang",new { lang = LanguageM.AvailableLanguages[0].LanguageCultureName })"><img src="~/Public/img/Icons/russia.png" alt="Rus"></a>
+                                    </div>
+                                    <div class="col-12 justify-content-end d-sm-flex d-block">
+                                        <form class="form-inline flex-nowrap p-1 pt-sm-3" action="#">
+                                            <input class="form-control I-input" type="text" placeholder="@Resource.Search">
+                                            <button class="btn I-btn ml-2 d-flex justify-content-center" type="submit"><img class="" src="~/Public/img/Icons/magnifying.png" alt="Eng"></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="I-navbar">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row align-tems-center">
+                        <div class="col-12">
+                            <a class="d-md-none"><img id="btnMenu" src="~/Public/img/Icons/menu.png" alt="menu"></a>
+                            <ul class="d-md-flex justify-content-md-between flex-wrap">
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active-nav" : "")">@Html.ActionLink(Resource.Home, "index", "home")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "LatestNews" ? "active-nav" : "")">@Html.ActionLink(Resource.NewsLent, "LatestNews", "Category")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Politics" ? "active-nav" : "")">@Html.ActionLink(Resource.Politics, "Politics", "Category")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Economy" ? "active-nav" : "")">@Html.ActionLink(Resource.Economy, "Economy", "Category")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Sport" ? "active-nav" : "")">@Html.ActionLink(Resource.Sport, "Sport", "Category")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Culture" ? "active-nav" : "")">@Html.ActionLink(Resource.Culturee, "Culture", "Category")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "World" ? "active-nav" : "")">@Html.ActionLink(Resource.World, "World", "Category")</li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Analytics" ? "active-nav" : "")">@Html.ActionLink(Resource.Analytics, "Analytics", "Category")</li>
+                                <li class="d-md-none d-lg-block"><a href="#aboutUS">@Resource.AboutUs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <section id="footerSection">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row">
+                        <div id="aboutUS" class="col-12 col-md-12">
+                            <div class="col-12"><a href=""><img src="~/Public/img/56-logo-@(Resource.langg+".png")" alt=""></a></div>
+                            <div class="col-12">
+                                <ul>
+                                    <li>
+                                        <span>@Resource.AboutUs:</span>
+                                        <p>
+                                           @Resource.About
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href=":tel">
+                                            <img src="~/Public/img/Icons/whatsapp-logo.png" alt="">
+                                            <span>+(994)40-600-50-40</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:support@56xeber.az">
+                                            <img src="~/Public/img/Icons/mail.png" alt="">
+                                            <span>support@56xeber.az</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com/maps/place/AF+Business+House/&#64;40.377194,49.8533683,19z/data=!3m1!4b1!4m5!3m4!1s0x40307d077c61fef3:0xfa4594c97092ca01!8m2!3d40.3771939!4d49.8539152" target="_blank">
+                                            <img src="~/Public/img/Icons/location.png" alt="">
+                                            <span>Nizami küçəsi 203B, AF Business House</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="py-2">Copyright © 2019 | P210-Mehdiyev All rights reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pageTo-Top">
+            <a href="#">
+                <img src="~/Public/img/Icons/top-arrow.png">
+            </a>
+        </div>
+
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery&bootstrap")
+    @Scripts.Render("~/bundles/header")
+
+    @RenderSection("index", false)
+    @RenderSection("lastNewsScript", false)
+
+</body>
+</html>

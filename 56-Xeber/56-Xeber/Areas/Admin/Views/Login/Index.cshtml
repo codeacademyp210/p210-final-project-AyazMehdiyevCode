@@ -1,0 +1,46 @@
+﻿@model _56_Xeber.Areas.Admin.Models.User
+@{
+    ViewBag.Title = "Daxil ol";
+    
+}
+@using _56_Xeber.Resources
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    <main>
+        <section class="bg-dark">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row justify-content-center align-content-center vh-100">
+                        <div class="col-10 col-sm-6 col-md-5 col-lg-4  bg-light py-2 rounded shadow">
+                            <div class="col-12">
+                                <img class="p-2 w-100" src="~/Public/img/56-logo-dark.png" alt="Logo" />
+                            </div>
+                            <form class="form-group" action="@Url.Action("SignIn")" method="post">
+                                @Html.AntiForgeryToken()
+                                <label class="col-form-label" for="Login">@(Resource.Login):</label>
+                                @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = Resource.EnterLogin, } })
+                                @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger small d-block" })
+                                <label class="col-form-label" for="Password">@(Resource.Password):</label>
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "Password", placeholder = Resource.EnterPassword, } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger small d-block" })
+                                <button class="btn btn-dark btn-block mt-2" type="submit">@Resource.SignIn</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    @Scripts.Render("~/bundles/jquery&bootstrap")
+    @Scripts.Render("~/bundles/Validation")
+</body>
+
+</html>

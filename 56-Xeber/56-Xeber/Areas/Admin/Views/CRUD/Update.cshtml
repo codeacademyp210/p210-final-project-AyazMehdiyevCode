@@ -1,0 +1,74 @@
+﻿@model _56_Xeber.Areas.Admin.Models.News
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="bg-dark overflow-hidden vh-100">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center align-content-center vh-100">
+                <div class="col-11 col-sm-9 bg-light py-4 rounded shadow pre-scrollable" style="min-height:90%">
+                    <div class="col-12">
+                        <h3 class="text-right d-block border-bottom border-dark">Dəyişmək</h3>
+                    </div>
+                    <div class="col-12">
+                        <form class="form-group" action="@Url.Action("Update")" method="post" enctype="multipart/form-data">
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(model => model.Id)
+                            @Html.HiddenFor(model => model.PubDate)
+                            @Html.HiddenFor(model => model.ReadCount)
+                            @Html.LabelFor(model => model.Title_az, "Xəbər Başlığı Az:", htmlAttributes: new { @class = "col-form-label" })
+                            @Html.EditorFor(model => model.Title_az, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Xəbər başlığını daxil edin..." } })
+                            @Html.LabelFor(model => model.Text_az, "Xəbər Mətni Az:", htmlAttributes: new { @class = "col-form-label" })
+                            @Html.TextAreaFor(model => model.Text_az, htmlAttributes: new { @class = "form-control", rows = "4", placeholder = "Xəbərin mətnini əlavə edin..." })
+                            @Html.LabelFor(model => model.Title_ru, "Xəbər Başlığı Ru:", htmlAttributes: new { @class = "col-form-label" })
+                            @Html.EditorFor(model => model.Title_ru, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Xəbər başlığını daxil edin..." } })
+                            @Html.LabelFor(model => model.Text_ru, "Xəbər Mətni Ru:", htmlAttributes: new { @class = "col-form-label" })
+                            @Html.TextAreaFor(model => model.Text_ru, htmlAttributes: new { @class = "form-control", rows = "4", placeholder = "Xəbərin mətnini əlavə edin..." })
+                            @Html.LabelFor(model => model.CategoryId, "Xəbərin kateqoriyasını seçin:", htmlAttributes: new { @class = "col-form-label d-inline-block" })
+                            @Html.DropDownListFor(model => model.CategoryId, null, new { htmlAttributes = new { @class = "form-control" } })
+                            <div class="custom-control custom-switch d-inline-block ml-3">
+                                <input type="checkbox" name="Hot" class="custom-control-input" id="customSwitchHot" value="True" @(Model.Hot == true ? "checked" : "")>
+                                <label class="custom-control-label" for="customSwitchHot">Önəmli Xəbər</label>
+                            </div>
+                            @Html.LabelFor(model => model.Video, "Youtube sonluğunu daxil edin:", htmlAttributes: new { @class = "col-form-label d-block" })
+                            @Html.EditorFor(model => model.Video, new { htmlAttributes = new { @class = "form-control", type = "text", placeholder = "Youtube/watch?v=nNEjXCSnw6w ==>> 'nNEjXCSnw6w'" } })
+                            <div class="custom-file d-inline-block mt-2">
+                                <input type="file" class="custom-file-input" name="files" id="Images" multiple="multiple">
+                                <label class="custom-file-label" data-browse="Seçin..." for="Images">Şəkil və ya şəkilləri</label>
+                            </div>
+                            @{
+                                if (Model.Images.FirstOrDefault() != null)
+                                {
+                                    <div class="col-12">
+                                        <div class="row flex-wrap">
+
+                                            @foreach (var image in Model.Images)
+                                            {
+                                                <div class="col-6 border-bottom border-dark">
+                                                    <div class="row">
+                                                        <div class="col-12 m-2">
+                                                            <img class="w-100" src="~/Public/Uploads/@image.Url" alt="Alternate Text" />
+                                                            <a class="btn btn-outline-danger mt-2 d-block" href="@Url.Action("RemoveImg",new { id = image.Id })">Şəkli sil</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+
+                                }
+                            }
+                            <button class="btn btn-dark mt-2" type="submit">Dəyiş</button>
+                            <a class="btn btn-outline-dark mt-2" href="@Url.Action("Index")">Ləğv</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,112 @@
+﻿@model _56_Xeber.Areas.Admin.Models.News
+@using System.Globalization
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+@{
+    string date;
+    if (Model.PubDate.Day == DateTime.Now.Day)
+    {
+        date = Model.PubDate.ToString("Bu Gün: HH:mm");
+    }
+    else
+    {
+        date = Model.PubDate.ToString("dddd, dd MMMM yyyy HH:mm", new CultureInfo("Az"));
+    }
+}
+<section class="bg-dark overflow-hidden vh-100">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center align-content-center vh-100">
+                <div class="col-11 col-sm-9 bg-light py-4 rounded shadow pre-scrollable" style="min-height:90%">
+                    <div class="col-12">
+                        <h3 class="text-right text-danger d-block border-bottom border-dark">Silmək İstəyirsiniz?</h3>
+                    </div>
+                    <div class="col-12 ">
+                        <span class="d-block text-right">@date | @(Model.Category.Name)</span>
+                        <h5 class="@(Model.Hot == true ? "text-danger" : "")">@Html.DisplayFor(m => m.Title_az)</h5>
+                        <p class="mb-3" style="text-align: justify;text-justify: inter-word;">@Html.DisplayFor(m => m.Text_az)</p>
+                        <h5 class="@(Model.Hot == true ? "text-danger" : "") ">@Html.DisplayFor(m => m.Title_ru)</h5>
+                        <p style="text-align: justify;text-justify: inter-word;">@Html.DisplayFor(m => m.Text_ru)</p>
+                        @{
+                            if (!string.IsNullOrEmpty(Model.Video))
+                            {
+
+                                <div class="col-12 py-1">
+                                    <div class="row">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/@(Model.Video)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        @{
+                            if (Model.Images != null && Model.Images.Count > 1)
+                            {
+                                <div class="col-12 py-1">
+                                    <div class="row">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                @{ int i = 0;
+                                                    foreach (var image in Model.Images)
+                                                    {
+                                                        <li data-target="#carouselExampleIndicators" data-slide-to="@i" class="@(i==0 ? "active": "")"></li>
+                                                        i++;
+                                                    }
+                                                }
+
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                @{
+                                                    foreach (var image in Model.Images)
+                                                    {
+                                                        <div class="carousel-item @(Model.Images.FirstOrDefault().Id == image.Id ? "active": "")">
+                                                            <img src="~/Public/Uploads/@image.Url" class="d-block w-100" alt="...">
+                                                        </div>
+                                                    }
+                                                }
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+                            if (Model.Images != null && Model.Images.Count == 1)
+                            {   <div class="row">
+                                <div class="col-12 py-1">
+                                    <img class="d-block w-100" src="~/Public/Uploads/@(Model.Images.FirstOrDefault().Url)" alt="" />
+                                </div>
+                                </div>
+                            }
+
+                        }
+
+                    <div class="row">
+                    <div class="col-12">
+                    <form action="@Url.Action("Delete", new { Id = Model.Id })" method="post">
+                        @Html.AntiForgeryToken()
+                       <button class="btn btn-danger mt-2" type="submit">Bəli</button>
+                       <a class="btn btn-outline-success mt-2"  href="@Url.Action("Index")">Xeyr</a>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

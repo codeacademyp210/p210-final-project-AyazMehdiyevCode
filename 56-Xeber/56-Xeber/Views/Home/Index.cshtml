@@ -1,0 +1,680 @@
+﻿@model System.Collections.Generic.List<_56_Xeber.Areas.Admin.Models.News>
+@using System.Data.Entity;
+@using _56_Xeber.Resources
+@{
+    ViewBag.Title = Resource.Home;
+}
+
+<section id="marqSection">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center">
+                    <marquee id="marque-news" scrollamount="10">
+                        @foreach (var item in Model.OrderByDescending(x => x.PubDate).Take(5))
+                        {
+                            <a href="">
+                                <span>1.</span>
+                                <span>Cəlilabadda iki minik maşını toqquşub</span>
+                            </a>
+
+                        }
+                        <a href="#">
+                            <span>1.</span>
+                            <span>Cəlilabadda iki minik maşını toqquşub</span>
+                        </a>
+                        <a href="#">
+                            <span>2.</span>
+                            <span>Cəlilabadda iki minik maşını toqquşub</span>
+                        </a>
+                        <a href="#">
+                            <span>3.</span>
+                            <span>Cəlilabadda iki minik maşını toqquşub</span>
+                        </a>
+                        <a href="#">
+                            <span>4.</span>
+                            <span>Cəlilabadda iki minik maşını toqquşub</span>
+                        </a>
+                        <a href="#">
+                            <span>5.</span>
+                            <span>Cəlilabadda iki minik maşını toqquşub</span>
+                        </a>
+
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="newsSection" style="background-image:Url('/Public/img/3.jpg');">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row px-3">
+                <div class="col-12 col-md-6 col-lg-7 slidebox py-3">
+                    <div class="row slideItems flex-nowrap">
+                        <div id="lastSlideClone" class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/600x400.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">5.Cəlilabadda iki minik maşını toqquşub</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/600x400.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">1.Cəlilabadda iki minik maşını toqquşub</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/150x100.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">2.Cəlilabadda iki minik maşını toqquşub</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/600x400.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/1200x800.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">4.Cəlilabadda iki minik maşını toqquşub</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/600x400.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">5.Cəlilabadda iki minik maşını toqquşub</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                        <div id="firstSlideClone" class="col-12">
+                            <a href="">
+                                <img src="~/Public/img/600x400.jpg" alt="">
+                            </a>
+                            <div class="d-flex flex-column justify-content-center p-3">
+                                <span><a href="#">İqtisadiyyat</a></span>
+                                <a href="#"><p class="line-clamp-2">1.Cəlilabadda iki minik maşını toqquşub</p></a>
+                                <span>01.01.2019 13:44</span>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="nextbtn" src="~/Public/img/Icons/right-arrow.png" alt="">
+                    <img class="prevbtn" src="~/Public/img/Icons/left-arrow.png" alt="">
+                </div>
+                <div class="col-12 col-md-6 col-lg-5 topFive d-flex flex-column pl-sm-3 pr-0 py-3">
+                    <div class="row">
+                        <div class="col-12 pb-1">
+                            <span>@Resource.Most_popular</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-4 pr-0"><span data-tab="0" class="active-tab-btn">@Resource._24Hours</span></div>
+                                <div class="col-4 px-0"><span data-tab="1">@Resource.Week</span></div>
+                                <div class="col-4 pl-0"><span data-tab="2">@Resource.Month</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row tab active-tab">
+                        <div class="col-12">
+                            <div class="row m-0">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <a href=""><p class="line-clamp-2">İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</p></a>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <a href=""><p class="line-clamp-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p></a>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/1200x800.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <a href=""><p class="line-clamp-2">İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</p></a>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <a href=""><p class="line-clamp-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p></a>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-md-none d-lg-block">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <a href=""><p class="line-clamp-2">İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</p></a>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row tab">
+                        <div class="col-12">
+                            <div class="row m-0">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href=""> 7 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href=""> 7 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href=""> 7 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href=""> 7 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href=""> 7 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row tab ">
+                        <div class="col-12">
+                            <div class="row m-0">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href="">30 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href="">30 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href="">30 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href="">30 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-4 d-md-none d-lg-block"><a href=""><img src="~/Public/img/150x100.jpg" alt=""></a></div>
+                                        <div class="col-8 col-md-12 col-lg-8">
+                                            <p class="text-md-truncate"><a href="">30 gün İmişlidə yol nəqliyyat hadisəsi baş vermişdir araşdırma aparılır</a></p>
+                                            <span>01.02.2019 13:22</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="worldSection">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>@Resource.World</h3>
+                        </div>
+                    </div>
+                    <div class="row worldNews flex-wrap">
+                        <div class="col-12 d-flex flex-wrap">
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="@Url.Action("Index","News")">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="twoColumnBody">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-8">
+                    <div class="row economyNews">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>@Resource.Economy</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 col-md-12 col-lg-6 py-2">
+                                        <div class="row">
+                                            <div class="col-12 d-none d-sm-flex">
+                                                <a href="">
+                                                    <img src="~/Public/img/600x400.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-12 pl-0-media">
+                                                <div class="p-2 bg-tr-white">
+                                                    <a href="">
+                                                        <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                                    </a>
+                                                    <span class="d-none d-sm-block">01 Yanvar 2019 10:55</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-12 col-lg-6 py-2">
+                                        <div class="row">
+                                            <div class="col-12 d-none d-sm-flex">
+                                                <a href="">
+                                                    <img src="~/Public/img/600x400.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-12 pl-0-media">
+                                                <div class="p-2 bg-tr-white">
+                                                    <a href="">
+                                                        <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                                    </a>
+                                                    <span class="d-none d-sm-block">01 Yanvar 2019 10:55</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-12 col-lg-6 py-2">
+                                        <div class="row">
+                                            <div class="col-12 d-none d-sm-flex">
+                                                <a href="">
+                                                    <img src="~/Public/img/600x400.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-12 pl-0-media">
+                                                <div class="p-2 bg-tr-white">
+                                                    <a href="">
+                                                        <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                                    </a>
+                                                    <span class="d-none d-sm-block">01 Yanvar 2019 10:55</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-12 col-lg-6 py-2">
+                                        <div class="row">
+                                            <div class="col-12 d-none d-sm-flex">
+                                                <a href="">
+                                                    <img src="~/Public/img/600x400.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="col-12 pl-0-media">
+                                                <div class="p-2 bg-tr-white">
+                                                    <a href="">
+                                                        <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                                    </a>
+                                                    <span class="d-none d-sm-block">01 Yanvar 2019 10:55</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row analyticsNews">
+                        <div class="col-12">
+                            <h3>@Resource.Analytics</h3>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12"><a href=""><p class="line-clamp-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p></a></div>
+                            <div class="col-12">
+                                <p class="newspaper2 my-2">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12"><a href=""><p class="line-clamp-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p></a></div>
+                            <div class="col-12">
+                                <p class="newspaper2 my-2">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12"><a href=""><p class="line-clamp-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p></a></div>
+                            <div class="col-12">
+                                <p class="newspaper2 my-2">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row sportNews d-none d-lg-flex">
+                        <div class="col-12">
+                            <h3>@Resource.Sport</h3>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12 py-2">
+                                <div class="row">
+                                    <div class="col-6 pr-0"><a class="w-100" href=""><img class="w-100" src="~/Public/img/1200x800.jpg" alt=""></a></div>
+                                    <div class="col-6 bg-tr-white d-flex flex-column justify-content-center">
+                                        <a href="">
+                                            <p class="line-clamp-2 mb-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <p class="line-clamp-4">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                        </p>
+                                        <span>01 Yanvar 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12 py-2">
+                                <div class="row">
+                                    <div class="col-6 pr-0"><a class="w-100" href=""><img class="w-100" src="~/Public/img/1200x800.jpg" alt=""></a></div>
+                                    <div class="col-6 bg-tr-white d-flex flex-column justify-content-center">
+                                        <a href="">
+                                            <p class="line-clamp-2 mb-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <p class="line-clamp-4">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                        </p>
+                                        <span>01 Yanvar 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @{Html.RenderPartial("_LastNews");}
+            </div>
+        </div>
+    </div>
+</section>
+<section id="clone-hidden-sport-news" class="d-lg-none">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row sportNews d-lg-none">
+                        <div class="col-12">
+                            <h3>@Resource.Sport</h3>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12 py-2">
+                                <div class="row">
+                                    <div class="col-6 pr-0 d-none d-sm-block"><a class="w-100" href=""><img class="w-100" src="~/Public/img/1200x800.jpg" alt=""></a></div>
+                                    <div class="col-12 col-sm-6 bg-tr-white d-flex flex-column justify-content-center">
+                                        <a href="">
+                                            <p class="line-clamp-2 mb-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <p class="line-clamp-4">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                        </p>
+                                        <span class="d-none d-md-block">01 Yanvar 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12 py-2">
+                                <div class="row">
+                                    <div class="col-6 pr-0 d-none d-sm-block"><a class="w-100" href=""><img class="w-100" src="~/Public/img/1200x800.jpg" alt=""></a></div>
+                                    <div class="col-12 col-sm-6 bg-tr-white d-flex flex-column justify-content-center">
+                                        <a href="">
+                                            <p class="line-clamp-2 mb-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <p class="line-clamp-4">
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius
+                                        </p>
+                                        <span class="d-none d-md-block">01 Yanvar 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="worldSection" class="culture">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>@Resource.Culturee</h3>
+                        </div>
+                    </div>
+                    <div class="row worldNews flex-wrap">
+                        <div class="col-12 d-flex flex-wrap">
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="row">
+                                    <div class="d-none col-sm-4 d-sm-flex pr-0">
+                                        <a href="">
+                                            <img src="~/Public/img/150x100.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-8">
+                                        <a href="">
+                                            <p class="line-clamp pt-2">Elmar Məmmədyarov: "Azərbaycan Xəzərdə iqtisadi əməkdaşlığın artırılmasında maraqlıdır"</p>
+                                        </a>
+                                        <span class="d-none d-sm-inline d-md-none d-lg-inline">01 Yanvar 2019 10:55</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section index{
+    <script src="~/Public/js/marquee.js"></script>
+    <script src="~/Public/js/slidescript.js"></script>
+    <script src="~/Public/js/TopFive.js"></script>
+}
+@section lastNewsScript{
+    <script src="~/Public/js/lastNewsScript.js"></script>
+}

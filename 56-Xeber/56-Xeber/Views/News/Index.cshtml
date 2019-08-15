@@ -1,0 +1,181 @@
+﻿@model _56_Xeber.Areas.Admin.Models.News
+@{
+    ViewBag.Title = "News";
+}
+@using _56_Xeber.Resources
+@using System.Globalization;
+@using System.Threading;
+
+<section id="twoColumnBody" class="pt-3">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 col-lg-8">
+                    <div class="row news">
+                        <div class="col-12">
+                            <h2 class="pb-3"><b>@(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "az" ? Model.Title_az : Model.Title_ru)</b></h2>
+                            <span class="text-secondary">01 yanvar 2019 15:20</span>
+                        </div>
+                        <div class="col-12">
+                            <p class="">
+                                <img class="img-resp" src="~/Public/img/@Model.Images.FirstOrDefault().Url" alt="">@(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "az" ? Model.Text_az : Model.Text_ru)
+                            </p>
+                        </div>
+                        @if (Model.Video != null)
+                        {
+                            <div class="col-12 py-3">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/@(Model.Video)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        }
+                        @{if (Model.Images != null && Model.Images.Count > 1)
+                            {
+                                <div class="col-12 py-1">
+                                    <div class="row">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                @{ int i = 0;
+                                                    foreach (var image in Model.Images)
+                                                    {
+                                                        <li data-target="#carouselExampleIndicators" data-slide-to="@i" class="@(i==0 ? "active": "")"></li>
+                                                        i++;
+                                                    }
+                                                }
+
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                @{
+                                                    foreach (var image in Model.Images)
+                                                    {
+                                                        <div class="carousel-item @(Model.Images.FirstOrDefault().Id == image.Id ? "active": "")">
+                                                            <img src="~/Public/Uploads/@image.Url" class="d-block w-100" alt="...">
+                                                        </div>
+                                                    }
+                                                }
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+                            if (Model.Images != null && Model.Images.Count == 1)
+                            {
+                                <div class="col-12 py-1">
+                                    <img class="d-block w-100" src="~/Public/Uploads/@(Model.Images.FirstOrDefault().Url)" alt="" />
+                                </div>
+                            }
+
+                        }
+
+                    </div>
+                    <div class="row sameNews">
+                        <div class="col-12 my-2">
+                            <h4 class="my-1 py-1 border-bottom border-dark"><b>@Resource.AnotherNews</b></h4>
+                            <div class="col-12">
+                                <div class="row py-1 border-bottom">
+                                    <div class="col-12 px-0">
+                                        <span class="text-secondary">01 yanvar 2019 15:20</span>
+                                    </div>
+                                    <div class="d-none d-sm-block col-sm-3 col-md-2 px-0">
+                                        <a href=""><img class="w-100" src="~/Public/img/600x400.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-12 col-sm-9 col-md-10 col-lg-10">
+                                        <a href="./showbyid.html">
+                                            <p class="line-clamp">
+                                                <b>
+                                                    Azərbaycanda Qurban bayramı ilə əlaqədar satış və kəsim yerlərində dezinfeksiya pulsuz olacaq
+                                                </b>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row py-1 border-bottom">
+                                    <div class="col-12 px-0">
+                                        <span class="text-secondary">01 yanvar 2019 15:20</span>
+                                    </div>
+                                    <div class="d-none d-sm-block col-sm-3 col-md-2 px-0">
+                                        <a href=""><img class="w-100" src="~/Public/img/600x400.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-12 col-sm-9 col-md-10 col-lg-10">
+                                        <a href="./showbyid.html">
+                                            <p class="line-clamp">
+                                                <b>
+                                                    Azərbaycanda Qurban bayramı ilə əlaqədar satış və kəsim yerlərində dezinfeksiya pulsuz olacaq
+                                                </b>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row py-1 border-bottom">
+                                    <div class="col-12 px-0">
+                                        <span class="text-secondary">01 yanvar 2019 15:20</span>
+                                    </div>
+                                    <div class="d-none d-sm-block col-sm-3 col-md-2 px-0">
+                                        <a href=""><img class="w-100" src="~/Public/img/600x400.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-12 col-sm-9 col-md-10 col-lg-10">
+                                        <a href="./showbyid.html">
+                                            <p class="line-clamp">
+                                                <b>
+                                                    Azərbaycanda Qurban bayramı ilə əlaqədar satış və kəsim yerlərində dezinfeksiya pulsuz olacaq
+                                                </b>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row py-1 border-bottom">
+                                    <div class="col-12 px-0">
+                                        <span class="text-secondary">01 yanvar 2019 15:20</span>
+                                    </div>
+                                    <div class="d-none d-sm-block col-sm-3 col-md-2 px-0">
+                                        <a href=""><img class="w-100" src="~/Public/img/600x400.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-12 col-sm-9 col-md-10 col-lg-10">
+                                        <a href="./showbyid.html">
+                                            <p class="line-clamp">
+                                                <b>
+                                                    Azərbaycanda Qurban bayramı ilə əlaqədar satış və kəsim yerlərində dezinfeksiya pulsuz olacaq
+                                                </b>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row py-1 border-bottom">
+                                    <div class="col-12 px-0">
+                                        <span class="text-secondary">01 yanvar 2019 15:20</span>
+                                    </div>
+                                    <div class="d-none d-sm-block col-sm-3 col-md-2 px-0">
+                                        <a href=""><img class="w-100" src="~/Public/img/600x400.jpg" alt=""></a>
+                                    </div>
+                                    <div class="col-12 col-sm-9 col-md-10 col-lg-10">
+                                        <a href="./showbyid.html">
+                                            <p class="line-clamp">
+                                                <b>
+                                                    Azərbaycanda Qurban bayramı ilə əlaqədar satış və kəsim yerlərində dezinfeksiya pulsuz olacaq
+                                                </b>
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @{Html.RenderPartial("_LastNews");}
+            </div>
+        </div>
+    </div>
+</section>
+@section lastNewsScript{
+    <script src="~/Public/js/lastNewsScript.js"></script>
+}
